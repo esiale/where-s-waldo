@@ -1,5 +1,7 @@
+import '../styles/dropdown.css';
+
 const Dropdown = (props) => {
-  const { coordinates, handlePick } = props;
+  const { coordinates, handlePick, objective } = props;
 
   const style = {
     top: `${coordinates.currentY}px`,
@@ -12,15 +14,21 @@ const Dropdown = (props) => {
 
   return (
     <div className="dropdown" style={style}>
-      <button value="tom" onClick={(e) => handleClick(e)}>
-        Tom
-      </button>
-      <button value="waldo" onClick={(e) => handleClick(e)}>
-        Waldo
-      </button>
-      <button value="fry" onClick={(e) => handleClick(e)}>
-        Fry
-      </button>
+      {objective.tom ? null : (
+        <button value="tom" onClick={(e) => handleClick(e)}>
+          Tom
+        </button>
+      )}
+      {objective.waldo ? null : (
+        <button value="waldo" onClick={(e) => handleClick(e)}>
+          Waldo
+        </button>
+      )}
+      {objective.fry ? null : (
+        <button value="fry" onClick={(e) => handleClick(e)}>
+          Fry
+        </button>
+      )}
     </div>
   );
 };

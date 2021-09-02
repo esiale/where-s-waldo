@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import Dropdown from './Dropdown';
 
 const Board = (props) => {
-  const { compareData } = props;
+  const { compareData, objective } = props;
   const image = useRef(null);
 
   const [showDropdown, setShowDropdown] = useState(false);
@@ -18,6 +18,7 @@ const Board = (props) => {
     const naturalX = ((naturalWidth / currentWidth) * currentX).toFixed();
     const naturalY = ((naturalHeight / currentHeight) * currentY).toFixed();
     compareData(value, naturalX, naturalY);
+    setShowDropdown(false);
   };
 
   const handleClick = (e) => {
@@ -35,7 +36,11 @@ const Board = (props) => {
   return (
     <div className="main">
       {showDropdown ? (
-        <Dropdown coordinates={dropdownCoordinates} handlePick={handlePick} />
+        <Dropdown
+          coordinates={dropdownCoordinates}
+          objective={objective}
+          handlePick={handlePick}
+        />
       ) : null}
       <img
         src={mainImage}

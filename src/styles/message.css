@@ -1,0 +1,22 @@
+.message {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 30%;
+  transform: translateX(-50%);
+  left: 50%;
+  background-color: rgb(var(--primary), 0.9);
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.5rem;
+  z-index: 1;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.message-failure {
+  color: rgb(128, 0, 32);
+}
+
+.message-success {
+  color: rgb(0, 153, 25);
+}

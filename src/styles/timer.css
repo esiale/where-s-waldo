@@ -1,0 +1,10 @@
+.timer {
+  position: fixed;
+  z-index: 1;
+  top: 2%;
+  right: 2%;
+  font-size: 4vw;
+  font-family: 'Staatliches', cursive;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000000;
+}

@@ -1,0 +1,104 @@
+.scoreboard {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.scoreboard-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(var(--primary), 0.9);
+  width: 25%;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+  color: rgb(var(--secondary));
+  gap: 0.5rem;
+}
+
+#scoreboard-box-header {
+  font-size: 1.1rem;
+}
+
+#scoreboard-box-header span {
+  color: rgb(var(--tertiary));
+}
+
+.scoreboard-entries {
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.scoreboard-entry {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(var(--primary));
+  padding: 0.5rem 1rem;
+}
+
+.scoreboard-last-entry {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.scoreboard-input {
+  width: 60%;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scoreboard-input input[type='text'] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 0;
+  border-radius: 0.5rem;
+}
+
+.scoreboard-input button {
+  border: 0;
+  width: 100%;
+  padding: 0.3rem 2rem;
+  background-color: rgb(var(--tertiary), 0.6);
+  border-radius: 0.5rem;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.scoreboard-thanks {
+  margin: 1rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 1200px) {
+  .scoreboard-box {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .scoreboard-box {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  .scoreboard-box {
+    width: 95%;
+  }
+}

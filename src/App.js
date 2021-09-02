@@ -64,19 +64,6 @@ const App = () => {
   }, [objective]);
 
   useEffect(() => {
-    const auth = getAuth();
-    signInAnonymously(auth)
-      .then(() => {
-        console.log('Successfully logged in');
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-      });
-  }, []);
-
-  useEffect(() => {
     const cacheImage = async (images) => {
       try {
         Object.values(images).forEach(async (image) => {
@@ -96,7 +83,20 @@ const App = () => {
       );
     };
 
+    const auth = getAuth();
+    const signIn = () =>
+      signInAnonymously(auth)
+        .then(() => {
+          console.log('Successfully logged in');
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorCode, errorMessage);
+        });
+
     const loadAll = async () => {
+      await signIn();
       await cacheImage(images);
       await fetchData();
       setLoading(false);
